@@ -1,0 +1,28 @@
+<html>
+<head>
+    <title>View Items</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+{{> navbar}}
+    <div class="container">
+        <h1 class="mt-5 mb-4">Available Items</h1>
+        <div class="row">
+            {{#entries}}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{name}}</h5>
+                        <p class="card-text">{{description}}</p>
+                        <p class="card-text"><strong>Use by:</strong> {{useByDate}}</p>
+                        <button class="btn btn-primary" onclick="confirmSelectItem('{{_id}}', '{{name}}')">Select</button>
+                    </div>
+                </div>
+            </div>
+            {{/entries}}
+        </div>
+    </div>
+
+</body>
+</html>
